@@ -42,6 +42,7 @@ enum crypto_attr_type_t {
 	CRYPTOCFGA_REPORT_BLKCIPHER,	/* struct crypto_report_blkcipher */
 	CRYPTOCFGA_REPORT_AEAD,		/* struct crypto_report_aead */
 	CRYPTOCFGA_REPORT_COMPRESS,	/* struct crypto_report_comp */
+    CRYPTOCFGA_REPORT_ACOMP,	/* struct crypto_report_acomp */
 	CRYPTOCFGA_REPORT_RNG,		/* struct crypto_report_rng */
 	CRYPTOCFGA_REPORT_CIPHER,	/* struct crypto_report_cipher */
 	CRYPTOCFGA_REPORT_AKCIPHER,	/* struct crypto_report_akcipher */
@@ -104,6 +105,10 @@ struct crypto_report_rng {
 };
 
 struct crypto_report_akcipher {
+	char type[CRYPTO_MAX_NAME];
+};
+
+struct crypto_report_acomp {
 	char type[CRYPTO_MAX_NAME];
 };
 

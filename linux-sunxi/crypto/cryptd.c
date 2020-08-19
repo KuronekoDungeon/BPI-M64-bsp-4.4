@@ -811,7 +811,7 @@ static int cryptd_create_aead(struct crypto_template *tmpl,
 		goto out_drop_aead;
 
 	inst->alg.base.cra_flags = CRYPTO_ALG_ASYNC |
-				   (alg->base.cra_flags & CRYPTO_ALG_INTERNAL);
+				   (alg->base.cra_flags & (CRYPTO_ALG_INTERNAL| CRYPTO_ALG_OPTIONAL_KEY));
 	inst->alg.base.cra_ctxsize = sizeof(struct cryptd_aead_ctx);
 
 	inst->alg.ivsize = crypto_aead_alg_ivsize(alg);
